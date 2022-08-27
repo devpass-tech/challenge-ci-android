@@ -1,0 +1,6 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    implementation(dependencies.Dependencies.materialDesign)
+    implementation(projects.designSystem.tokens)
+}

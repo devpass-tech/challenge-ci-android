@@ -1,0 +1,69 @@
+import dependencies.BuildPlugins
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath BuildPlugins.androidGradlePlugin
+        classpath BuildPlugins.kotlinGradlePlugin
+        classpath BuildPlugins.detektPlugin
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+subprojects {
+
+    afterEvaluate {
+        if (!project.hasProperty("android")) return
+
+        android {
+            compileSdkVersion AndroidConfig.compileSdk
+
+            defaultConfig {
+                minSdkVersion AndroidConfig.minSdk
+                targetSdkVersion AndroidConfig.targetSdk
+                versionCode 01
+                versionName "0.0.1"
+                testInstrumentationRunner AndroidConfig.instrumentationTestRunner
+            }
+
+            compileOptions {
+                sourceCompatibility 1.8
+                targetCompatibility 1.8
+            }
+
+            sourceSets {
+                main.java.srcDirs += 'src/main/kotlin'
+                test.java.srcDirs += 'src/test/kotlin'
+                androidTest.java.srcDirs += 'src/androidTest/kotlin'
+            }
+        }
+
+
+        dependencies {
+            testImplementation project(':commons-test')
+            androidTestImplementation project(':commons-test')
+        }
+    }
+}

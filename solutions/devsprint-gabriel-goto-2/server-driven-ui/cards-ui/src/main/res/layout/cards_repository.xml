@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="?attr/spacingXS"
+    tools:layout_margin="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeColor="#cccccc"
+    app:strokeWidth="1dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--region start header-->
+
+        <ImageView
+            android:id="@+id/card_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="?attr/spacingXS"
+            android:layout_marginTop="?attr/spacingXS"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="?attr/spacingXXS"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintBottom_toBottomOf="@+id/card_image"
+            app:layout_constraintStart_toEndOf="@+id/card_image"
+            app:layout_constraintTop_toTopOf="@+id/card_image"
+            tools:text="Sian Taylor" />
+
+        <!--region end header-->
+
+        <!--region start body-->
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="@+id/card_image"
+            app:layout_constraintTop_toBottomOf="@+id/card_image"
+            tools:text="telegraph-android" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginStart="?attr/spacingXS"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintStart_toStartOf="@+id/card_image"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Telegraph X is Android client" />
+
+        <!--region end body-->
+
+        <!--region start bottom-->
+
+        <TextView
+            android:drawablePadding="?attr/spacingXXXS"
+            app:drawableStartCompat="@drawable/ic_star"
+            android:id="@+id/txt_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/spacingXS"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintStart_toStartOf="@+id/card_image"
+            app:layout_constraintTop_toBottomOf="@+id/txt_description"
+            tools:text="75" />
+
+        <TextView
+            android:drawablePadding="?attr/spacingXXXS"
+            tools:drawableStartCompat="@drawable/cards_language_dot"
+            android:id="@+id/txt_language"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?attr/spacingSM"
+            android:layout_marginStart="?attr/spacingSM"
+            android:layout_marginTop="?attr/spacingXS"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_stars"
+            app:layout_constraintTop_toBottomOf="@+id/txt_description"
+            tools:text="kotlin" />
+
+
+        <!--region end bottom-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

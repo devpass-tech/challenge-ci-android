@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingXXS"
+        android:textAppearance="?attr/textAppearanceHeadline4"
+        app:layout_constraintBottom_toBottomOf="@+id/card_image"
+        app:layout_constraintStart_toEndOf="@+id/card_image"
+        app:layout_constraintTop_toTopOf="@+id/card_image"
+        tools:text="Sian Taylor" />
+
+    <TextView
+        android:id="@+id/txt_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingXXS"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        app:layout_constraintStart_toEndOf="@+id/card_image"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name"
+        tools:text="setaylor" />
+
+    <TextView
+        android:id="@+id/txt_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/spacingXS"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        app:layout_constraintStart_toStartOf="@+id/card_image"
+        app:layout_constraintTop_toBottomOf="@+id/card_image"
+        tools:text="s.e.taylor@gmail.com" />
+
+    <TextView
+        android:id="@+id/txt_bottom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/spacingXS"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        app:layout_constraintStart_toStartOf="@+id/card_image"
+        app:layout_constraintTop_toBottomOf="@+id/txt_contact"
+        tools:text="48 followers    72 following" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
