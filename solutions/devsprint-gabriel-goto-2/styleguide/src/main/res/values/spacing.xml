@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_XXXS">4dp</dimen>
+    <dimen name="spacing_XXS">8dp</dimen>
+    <dimen name="spacing_XS">16dp</dimen>
+    <dimen name="spacing_SM">24dp</dimen>
+    <dimen name="spacing_MD">32dp</dimen>
+    <dimen name="spacing_LG">40dp</dimen>
+    <dimen name="spacing_XL">48dp</dimen>
+    <dimen name="spacing_XXL">56dp</dimen>
+    <dimen name="spacing_XXXL">64dp</dimen>
+
+    <dimen name="loadingSize"></dimen>
+</resources>

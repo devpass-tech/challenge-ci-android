@@ -1,0 +1,28 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+}
+
+android {
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation dependencies.Dependencies.kotlinStdlib
+
+    implementation(projects.styleguide)
+    implementation(projects.designSystem.illustration)
+    implementation(projects.designSystem.tokens)
+    implementation(projects.infra.actionDispatcher)
+    implementation dependencies.Dependencies.appCompat
+
+    implementation dependencies.Dependencies.materialDesign
+    implementation dependencies.Dependencies.constraintLayout
+    implementation(dependencies.Dependencies.coreKTX)
+    implementation(dependencies.Dependencies.Kirich.viewBindingProperty)
+
+    testImplementation(dependencies.TestDependencies.jUnit)
+    //testImplementation(dependencies.TestDependencies.mockk)
+}

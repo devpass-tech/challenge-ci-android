@@ -1,0 +1,53 @@
+fragment LanguageFragment on Language {
+  name
+  color
+}
+
+fragment RepositoryFragment on Repository {
+  id
+  name
+  primaryLanguage {
+    ...LanguageFragment
+  }
+  description
+  owner {
+    avatarUrl
+    login
+  }
+  stargazerCount
+}
+
+query UserProfile {
+  user(login: "GabriellCosta") @nonnull {
+    avatarUrl
+    bio
+    login
+    email
+    followers {
+      totalCount
+    }
+    following {
+      totalCount
+    }
+    name @nonnull
+    pinnedItems(first: 3) @nonnull {
+      edges @nonnull {
+        node {
+          ...RepositoryFragment
+        }
+      }
+    }
+    repositories(first: 10, orderBy: { field: STARGAZERS, direction: ASC }) {
+      nodes {
+        ...RepositoryFragment
+      }
+    }
+    starredRepositories(first: 10) {
+      edges {
+        node {
+            ...RepositoryFragment
+        }
+      }
+    }
+  }
+}

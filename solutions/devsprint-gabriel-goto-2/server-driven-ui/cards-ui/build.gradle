@@ -1,0 +1,32 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+}
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation dependencies.Dependencies.kotlinStdlib
+
+    implementation(projects.styleguide)
+    implementation(projects.serverDrivenUi.cardsModel)
+    implementation(projects.serverDrivenUi.cardsProcessorPublic)
+
+    dependencies.Dependencies.Dagger.addLibs(project)
+
+    implementation dependencies.Dependencies.constraintLayout
+    implementation dependencies.Dependencies.materialDesign
+    implementation dependencies.Dependencies.appCompat
+    implementation dependencies.Dependencies.coreKTX
+
+    implementation dependencies.Dependencies.imageFetcher
+
+    implementation dependencies.Dependencies.Kirich.viewBindingProperty
+
+    dependencies.Dependencies.Groupie.addLibs(project)
+}

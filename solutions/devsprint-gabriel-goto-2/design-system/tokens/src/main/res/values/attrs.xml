@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="textAppearanceBody1" format="reference" />
+    <attr name="textAppearanceBody2" format="reference" />
+    <attr name="textAppearanceButton" format="reference" />
+    <attr name="textAppearanceCaption" format="reference" />
+    <attr name="textAppearanceHeadline1" format="reference" />
+    <attr name="textAppearanceHeadline2" format="reference" />
+    <attr name="textAppearanceHeadline3" format="reference" />
+    <attr name="textAppearanceHeadline4" format="reference" />
+    <attr name="textAppearanceHeadline5" format="reference" />
+    <attr name="textAppearanceHeadline6" format="reference" />
+    <attr name="textAppearanceLineHeightEnabled" format="boolean" />
+    <attr name="textAppearanceOverline" format="reference" />
+    <attr name="textAppearanceSubtitle1" format="reference" />
+    <attr name="textAppearanceSubtitle2" format="reference" />
+
+    <attr name="buttonLink" format="reference" />
+
+    <attr name="spacingXXXS" format="dimension" />
+    <attr name="spacingXXS" format="dimension" />
+    <attr name="spacingXS" format="dimension" />
+    <attr name="spacingSM" format="dimension" />
+    <attr name="spacingMD" format="dimension" />
+    <attr name="spacingLG" format="dimension" />
+    <attr name="spacingXL" format="dimension" />
+    <attr name="spacingXXL" format="dimension" />
+    <attr name="spacingXXXL" format="dimension" />
+
+    <attr name="colorWarning" format="reference|color" />
+    <attr name="colorOnWarning" format="reference|color" />
+    <attr name="colorBackground" format="reference|color" />
+    <attr name="colorOnError" format="color" />
+    <attr name="colorOnPrimary" format="color" />
+    <attr name="colorOnPrimarySurface" format="color" />
+    <attr name="colorOnSecondary" format="color" />
+    <attr name="colorOnSurface" format="color" />
+    <attr name="colorPrimarySurface" format="color" />
+    <attr name="colorPrimaryVariant" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="colorSecondaryVariant" format="color" />
+    <attr name="colorSurface" format="color" />
+    <attr name="elevationOverlayColor" format="color" />
+
+    <attr name="loadingSize" format="dimension" />
+
+</resources>

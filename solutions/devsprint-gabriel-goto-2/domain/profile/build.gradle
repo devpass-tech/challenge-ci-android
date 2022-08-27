@@ -1,0 +1,24 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id("com.apollographql.apollo3").version("3.3.0")
+    id "kotlin-kapt"
+}
+
+apollo {
+    packageName.set("dev.tigrao.github")
+}
+
+dependencies {
+    implementation dependencies.Dependencies.kotlinStdlib
+
+    implementation dependencies.Dependencies.Apollo.runtime
+    implementation dependencies.Dependencies.Apollo.sqLiteJvm
+
+    implementation projects.infra.apiCaller
+
+    dependencies.Dependencies.Dagger.addLibs(project)
+
+    testImplementation(dependencies.TestDependencies.jUnit)
+    testImplementation(dependencies.TestDependencies.mockk)
+}

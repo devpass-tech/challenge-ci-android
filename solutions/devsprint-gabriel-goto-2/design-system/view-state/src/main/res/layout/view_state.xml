@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <ImageView
+        android:layout_marginTop="?attr/spacingXXXL"
+        android:id="@+id/img_view_state_icon"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="?attr/spacingXXL"
+        android:layout_marginEnd="?attr/spacingXXL"
+        android:importantForAccessibility="no"
+        tools:src="@drawable/ill_api_error"
+        app:layout_constraintBottom_toTopOf="@+id/txt_view_state_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_view_state_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingSM"
+        android:layout_marginTop="?attr/spacingLG"
+        android:layout_marginEnd="?attr/spacingSM"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintBottom_toTopOf="@+id/txt_view_state_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_state_icon"
+        tools:text="Infelizmente não temos nenehum desconto para esse produto" />
+
+    <TextView
+        android:id="@+id/txt_view_state_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingSM"
+        android:layout_marginTop="?attr/spacingXXS"
+        android:layout_marginEnd="?attr/spacingSM"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_view_state_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_state_title"
+        tools:text="Infelizmente não temos nenehum desconto para esse produto" />
+
+    <Button
+        android:layout_marginTop="?attr/spacingXL"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_state_description"
+        android:id="@+id/btn_view_state_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingMD"
+        android:layout_marginEnd="?attr/spacingMD"
+        android:layout_marginBottom="?attr/spacingXS"
+        app:layout_constraintBottom_toTopOf="@+id/btn_view_state_negative_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="voltar para home" />
+
+    <Button
+        style="?attr/borderlessButtonStyle"
+        android:id="@+id/btn_view_state_negative_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/spacingMD"
+        android:layout_marginEnd="?attr/spacingMD"
+        android:layout_marginBottom="?attr/spacingMD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_view_state_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Cancelar açao" />
+
+</merge>

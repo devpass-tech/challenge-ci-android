@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+}
+
+android {
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation(projects.styleguide)
+    implementation(projects.designSystem.viewState)
+    implementation(projects.infra.actionDispatcher)
+    implementation(projects.infra.apiCaller)
+    implementation(projects.domain.profile)
+    implementation(projects.serverDrivenUi.cardsModel)
+    implementation(projects.serverDrivenUi.cardsProcessorPublic)
+
+    implementation dependencies.Dependencies.constraintLayout
+    implementation dependencies.Dependencies.recyclerView
+    implementation dependencies.Dependencies.pullToRefresh
+    implementation dependencies.Dependencies.materialDesign
+    implementation dependencies.Dependencies.appCompat
+    implementation dependencies.Dependencies.coreKTX
+    dependencies.Dependencies.Moshi.addLibs(project)
+    implementation dependencies.Dependencies.imageFetcher
+    implementation dependencies.Dependencies.retrofit
+    dependencies.Dependencies.Dagger.addLibs(project)
+    implementation dependencies.Dependencies.Dagger.android
+    implementation dependencies.Dependencies.lifecycleRuntime
+
+    implementation dependencies.Dependencies.Kirich.viewBindingProperty
+
+    testImplementation(dependencies.TestDependencies.jUnit)
+    testImplementation(dependencies.TestDependencies.mockk)
+
+
+    androidTestImplementation(dependencies.TestDependencies.mockkAndroid)
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test.ext:truth:1.4.0")
+}

@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion AndroidConfig.compileSdk
+    defaultConfig {
+        applicationId AndroidConfig.applicationId
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_URL", "\"https://api.github.com/graphql\""
+        buildConfigField "String", "ACCESS_TOKEN", "\"${github_access_token}\""
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("$rootDir/debug.keystore")
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".debug"
+            versionNameSuffix "- Debug"
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation(projects.feature.main)
+    implementation(projects.infra.network.impl)
+    implementation(projects.infra.network.public)
+    implementation(projects.domain.profile)
+    implementation(projects.serverDrivenUi.cardsUi)
+    implementation(projects.serverDrivenUi.cardsProcessorPublic)
+
+    implementation(dependencies.Dependencies.okhttpLogger)
+    implementation(dependencies.Dependencies.Apollo.runtime)
+    implementation(dependencies.Dependencies.Apollo.sqLite)
+
+    dependencies.Dependencies.Dagger.addLibs(project)
+    implementation dependencies.Dependencies.Dagger.android
+}

@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+dependencies {
+
+    implementation(projects.styleguide)
+    implementation("androidx.test:runner:1.1.1")
+    implementation("androidx.test.ext:junit:1.1.0")
+}
