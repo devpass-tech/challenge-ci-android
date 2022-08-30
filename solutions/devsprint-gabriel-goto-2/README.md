@@ -1,3 +1,5 @@
+![example workflow](https://github.com/GabriellCosta/GithubProfile/actions/workflows/main.yml/badge.svg?branch=master)
+
 ## Propose
 
 This project was based on a previous project on my github and on my personal project that was used

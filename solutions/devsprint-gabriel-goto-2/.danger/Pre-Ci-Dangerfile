@@ -1,0 +1,12 @@
+declared_trivial = github.pr_title.include? "#trivial"
+
+#Necessary Unit Tests
+diff = (git.added_files + git.modified_files).select { |item| !item.start_with?(".danger") }
+test_changes = diff.include?("**/src/test/**")
+is_only_dependencies_change = diff.all? { |s| s.start_with?("buildSrc") }
+
+if !test_changes && !declared_trivial && diff.include?("*.kt") && !is_only_dependencies_change
+   fail("Please write unit tests for this PR")
+end
+
+warn("Your PR is too big, would you like to break it in small ones?") if git.lines_of_code > 500
