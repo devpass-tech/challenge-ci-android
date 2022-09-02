@@ -1,11 +1,43 @@
-apply plugin: "org.jlleitschuh.gradle.ktlint"
-ktlint {
-    // https://github.com/pinterest/ktlint/releases
-    version = "0.42.1"
-    reporters {
-        reporter "plain"
-        reporter "checkstyle"
-        reporter "html"
+﻿apply plugin: 'kotlin'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    ktlint
+}
+
+dependencies {
+    ktlint("com.pinterest:ktlint:0.47.0") {
+        attributes {
+            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.EXTERNAL))
+        }
     }
-    outputColorName = "RED"
+    // additional 3rd party ruleset(s) can be specified here
+    // just add them to the classpath (e.g. ktlint 'groupId:artifactId:version') and
+    // ktlint will pick them up
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    args "src/**/*.kt"
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    args "-F", "src/**/*.kt"
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }

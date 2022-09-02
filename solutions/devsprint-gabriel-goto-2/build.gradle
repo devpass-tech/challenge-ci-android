@@ -36,6 +36,9 @@ task clean(type: Delete) {
 subprojects {
 
     afterEvaluate {
+
+        apply from: "$rootDir/buildscripts/ktlint.gradle"
+
         if (!project.hasProperty("android")) return
 
         android {
