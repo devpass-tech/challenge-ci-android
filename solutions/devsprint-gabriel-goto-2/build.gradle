@@ -34,10 +34,10 @@ task clean(type: Delete) {
 }
 
 subprojects {
+    
+    apply from: "$rootDir/buildscripts/ktlint.gradle"
 
     afterEvaluate {
-
-        apply from: "$rootDir/buildscripts/ktlint.gradle"
 
         if (!project.hasProperty("android")) return
 

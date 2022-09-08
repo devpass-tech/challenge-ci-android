@@ -1,11 +1,4 @@
-﻿apply plugin: 'kotlin'
-apply plugin: 'java'
-
-repositories {
-    mavenCentral()
-}
-
-configurations {
+﻿configurations {
     ktlint
 }
 
@@ -27,7 +20,6 @@ task ktlint(type: JavaExec, group: "verification") {
     args "src/**/*.kt"
     // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
 }
-check.dependsOn ktlint
 
 task ktlintFormat(type: JavaExec, group: "formatting") {
     description = "Fix Kotlin code style deviations."
