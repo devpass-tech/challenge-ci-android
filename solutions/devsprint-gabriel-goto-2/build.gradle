@@ -15,6 +15,7 @@ buildscript {
         classpath BuildPlugins.kotlinGradlePlugin
         classpath BuildPlugins.detektPlugin
         classpath BuildPlugins.ktLintPlugin
+        classpath BuildPlugins.koverPlugin
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -36,6 +37,7 @@ task clean(type: Delete) {
 subprojects {
     
     apply from: "$rootDir/buildscripts/ktlint.gradle"
+    apply from: "$rootDir/buildscripts/kover.gradle"
 
     afterEvaluate {
 

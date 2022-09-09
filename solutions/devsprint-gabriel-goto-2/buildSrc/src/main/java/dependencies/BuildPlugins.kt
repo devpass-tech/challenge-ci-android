@@ -5,6 +5,7 @@ object PluginsVersions {
     const val androidGradlePlugin = "7.0.4"
     const val detekt = "1.1.1"
     const val ktlint = "10.2.0"
+    const val kover = "0.6.0"
 }
 
 object BuildPlugins {
@@ -13,4 +14,5 @@ object BuildPlugins {
     const val androidGradlePlugin = "com.android.tools.build:gradle:${PluginsVersions.androidGradlePlugin}"
     const val detektPlugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PluginsVersions.detekt}"
     const val ktLintPlugin = "org.jlleitschuh.gradle:ktlint-gradle:${PluginsVersions.ktlint}"
+    const val koverPlugin = "org.jetbrains.kotlinx:kover:${PluginsVersions.kover}"
 }
