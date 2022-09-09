@@ -1,0 +1,26 @@
+name: Android Build
+
+on: pull_request
+
+jobs:
+  build:
+
+    runs-on: ubunto-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up JDK
+       users: actions/setup-java@v1
+       with:
+         java-version: 1.8
+
+      - name: Run Lint
+        run: ./gradlew lintDebug
+
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Build Project
+        run: ./gradlew assemble
+
