@@ -34,6 +34,8 @@ task clean(type: Delete) {
 }
 
 subprojects {
+
+    apply from: "$rootDir/buildscripts/ktlint.gradle"
     apply from: "$rootDir/tools/testDebugUnitTest.gradle"
 
     afterEvaluate {
