@@ -33,6 +33,7 @@ task clean(type: Delete) {
 }
 
 subprojects {
+    apply from: "$rootDir/tools/testDebugUnitTest.gradle"
 
     afterEvaluate {
         if (!project.hasProperty("android")) return
