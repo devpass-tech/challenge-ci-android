@@ -1,0 +1,15 @@
+afterEvaluate {
+    def isNotAndroid = !project.hasProperty("android")
+    def notHasSubProjects = project.subprojects.isEmpty()
+
+    if (isNotAndroid && notHasSubProjects) {
+
+        project.tasks.register("testDebugUnitTest") {
+            group "Verification"
+            description "Run the unit tests but with a same task as in android modules"
+
+        }
+
+        testDebugUnitTest.dependsOn("test")
+    }
+}
